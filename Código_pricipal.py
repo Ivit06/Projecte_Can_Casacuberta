@@ -1,0 +1,1 @@
+#Des de este simplente llamaremos a las funciones que estan en la carpeta /Funciones/F_loquesea. Allí pondremos todo el código.
