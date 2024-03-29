@@ -1,11 +1,13 @@
+import hashlib
+
 def leer_usuarios_contrasenas(archivo):
     usuarios_contrasenas = {}
 
     try:
         with open(archivo, 'r') as file:
             for linea in file:
-                usuario, contrasena = linea.strip().split(',')
-                usuarios_contrasenas[usuario] = contrasena
+                usuario, contrasena_cifrada = linea.strip().split('|')
+                usuarios_contrasenas[usuario] = contrasena_cifrada
     except FileNotFoundError:
         print(f"El archivo '{archivo}' no se encontró.")
     except Exception as e:
@@ -20,8 +22,9 @@ def iniciar_sesion(usuarios):
         while intentos > 0:
             usuario = input("Ingrese su nombre de usuario: ")
             contrasena = input("Ingrese su contraseña: ")
+            contrasena_cifrada = hashlib.md5(contrasena.encode()).hexdigest()
 
-            if usuario in usuarios and usuarios[usuario] == contrasena:
+            if usuario in usuarios and usuarios[usuario] == contrasena_cifrada:
                 print("Inicio de sesión exitoso.")
                 return True
             else:
