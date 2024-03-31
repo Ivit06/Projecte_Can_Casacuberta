@@ -39,7 +39,7 @@ def iniciar_sesion(usuarios):
         print(f"Error durante el inicio de sesión: {e}")
         return False
 
-archivo = "Usuarios.txt"
+archivo = "Usuarios.txt"    #VAMOS A USAR ARCHIVO PARA LOS USUARIO Y ARCHIVO2 PARA EL ARCHIVO DE LIBROS.
 usuarios = leer_usuarios_contrasenas(archivo)
 
 if usuarios:
