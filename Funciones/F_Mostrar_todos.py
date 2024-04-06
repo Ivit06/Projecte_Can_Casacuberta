@@ -10,6 +10,3 @@ def mostrar_todo (archivo):
         print(f"Ocurrió un error: {e}")
     else:
         a.close()
-
-archivo2="Llibres.txt"
-mostrar_todo(archivo2)

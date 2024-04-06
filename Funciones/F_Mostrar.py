@@ -1,6 +1,6 @@
 def mostrar_libro (archivo):
     try:
-        dato = input("Introduce el Títol o Autor/a o Any de publicació o Genere o ISBN del libro/s que quieres mostrar: ") #Si pones un genero hay que tener cuidado porque borra todos los de ese genero
+        dato = input("Introduce el Títol o Autor/a o Any de publicació o Genere o ISBN del libro/s que quieres mostrar: ")
         with open(archivo, 'r') as a:
             contenido = a.readlines()
             for linea in contenido:
@@ -12,6 +12,3 @@ def mostrar_libro (archivo):
         print(f"Ocurrió un error: {e}")
     else:
         a.close()
-
-archivo2="Llibres.txt"
-mostrar_libro(archivo2)

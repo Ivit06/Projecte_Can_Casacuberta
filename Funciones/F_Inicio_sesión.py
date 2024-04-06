@@ -38,13 +38,3 @@ def iniciar_sesion(usuarios):
     except Exception as e:
         print(f"Error durante el inicio de sesión: {e}")
         return False
-
-archivo = "Usuarios.txt"    #VAMOS A USAR ARCHIVO PARA LOS USUARIO Y ARCHIVO2 PARA EL ARCHIVO DE LIBROS.
-usuarios = leer_usuarios_contrasenas(archivo)
-
-if usuarios:
-    inicio_correcto = iniciar_sesion(usuarios)
-    if not inicio_correcto:
-        print("Cierre del programa.")
-else:
-    print("No se pueden iniciar sesiones porque no hay usuarios registrados.")
